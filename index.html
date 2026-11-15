@@ -1,0 +1,49 @@
+<!doctype html>
+<html lang="en"><head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+<title>Ultrared Light Therapy · Suite 220 · 3D Walkthrough</title>
+<meta name="description" content="Interactive 3D walkthrough of Ultrared Light Therapy, Acacia Court Suite 220.">
+<link rel="icon" href="data:,">
+<link rel="stylesheet" href="css/style.css">
+<script type="importmap">{"imports":{"three":"./js/three/three.module.js","three/addons/":"./js/three/addons/"}}</script>
+</head><body data-mode="welcome">
+<div id="app"></div>
+
+<div id="hud">
+  <div class="top">
+    <div id="here" class="chip t-hall">Acacia Court · Suite 220</div>
+    <div class="btns"><button id="btnTour">Guided tour</button><button id="btnView">Overview</button><button id="btnPhotos">Photos</button></div>
+  </div>
+  <div class="light"><span>☀</span><input id="tod" type="range" min="0" max="2" step="0.01" value="0.15" aria-label="Time of day"><span>☾</span><b id="todlabel">Morning</b></div>
+  <div class="hint desk">Drag to look · WASD / arrows to move · Shift = faster · click a glowing frame for photos</div>
+  <div class="hint touch">Left stick: move · drag: look · tap a glowing frame for photos</div>
+</div>
+<div id="joy"><i></i></div>
+
+<aside id="tourcard" hidden>
+  <div class="tc-head"><span id="tc-step"></span><button id="tc-close" aria-label="Close tour">✕</button></div>
+  <h2 id="tc-name"></h2><span id="tc-theme" class="chip"></span>
+  <p id="tc-size"></p><ul id="tc-feat"></ul>
+  <div class="tc-btns"><button id="tc-prev">‹ Prev</button><button id="tc-photos" class="ghost"></button><button id="tc-next" class="primary">Next ›</button></div>
+</aside>
+
+<div id="modal" hidden>
+  <img id="m-img" alt="Graded room photo">
+  <div class="m-bar"><button id="m-prev">‹</button><span id="m-cap"></span><button id="m-next">›</button></div>
+  <div class="m-bar2"><button id="m-toggle"></button><button id="m-close" class="primary">Close</button></div>
+</div>
+
+<section id="welcome">
+  <div class="w-inner">
+    <div class="brand">ULTRA<span>RED</span></div>
+    <div class="sub">LIGHT THERAPY</div>
+    <h1>Suite 220 · Acacia Court</h1>
+    <p>Step inside in 3D. Walk through Reception, the Lounge, and the Fire, Water, Air and Earth light-therapy rooms, all lit in the high-light, red-glow look.</p>
+    <p class="meta">≈2,423 sq ft rentable · 4 treatment rooms · 2 open lounges · Terrace #3</p>
+    <div class="loading" id="loadbar"><i></i></div>
+    <div class="w-btns"><button id="start-tour" class="primary">Start guided tour</button><button id="start-walk">Walk freely</button><button id="start-over">Overview</button></div>
+    <p class="small">Layout is approximate, modeled from the suite floor plan. Use the light slider to switch between morning, sunset and night.</p>
+  </div>
+</section>
+<script type="module" src="js/main.js"></script>
+</body></html>
